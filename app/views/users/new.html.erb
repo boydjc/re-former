@@ -17,16 +17,16 @@
 		<input type="submit" value="Submit">
 	</form> -->
 
-	<%= form_tag("/users", method: "post") do %>
-		<%= label_tag(:username, "Username: ") %>
-		<%= text_field_tag(:username) %>
+	<%= form_with model: @user do |form| %>
+		<%= form.label :username, "Username: " %>
+		<%= form.text_field :username %>
 		<br>
-		<%= label_tag(:email, "Email: ") %>
-		<%= email_field(:email, :address) %>
+		<%= form.label :email, "Email: "%>
+		<%= form.email_field :email %>
 		<br>
-		<%= label_tag(:password, "Password: ") %>
-		<%= password_field_tag(:password) %>
+		<%= form.label :password, "Password: " %>
+		<%= form.password_field :password %>
 		<br>
-		<%= submit_tag("Submit") %>
+		<%= form.submit "Submit" %>
 	<% end %>
 </div>
